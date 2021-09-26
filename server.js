@@ -1,5 +1,3 @@
-///https://wallpapercave.com/wp/wp3855232.png
-
 const express = require("express");
 var cors = require('cors');
 const app = express();

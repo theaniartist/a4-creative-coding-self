@@ -92,7 +92,7 @@ p {
 }
 
 .song:hover {
-    background-color:#63B1FF;
+    background-color:#E09D99;
 }
 
 #colors {
@@ -104,7 +104,7 @@ p {
 #changeColors {
     background-color: #FFB7AE;
     width: 360px;
-    margin-top: 350px;
+    margin-top: 425px;
     display: block;
     flex-direction: column;
 }
@@ -114,6 +114,10 @@ p {
     font-size: 15px;
     border: none;
     width: 100%;
+}
+
+.colorBtn:hover {
+    background-color: #E09D99;
 }
 
 #options {

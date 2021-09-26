@@ -103,9 +103,40 @@ aimerBtn.addEventListener('click', function() {
     audioElement.play()
 })
 
-const defaultColor = document.getElementById('default')
-const blue = document.getElementById('blueGradient')
+const defaultColor = document.getElementById('default'),
+      red = document.getElementById('redGradient'),
+      green = document.getElementById('greenGradient'),
+      blue = document.getElementById('blueGradient'),
+      purple = document.getElementById('purpleGradient')
+
+defaultColor.addEventListener('click', function() {
+    color = 'white';
+})
+
+red.addEventListener('click', function() {
+    let gradient = ctx.createLinearGradient(170, 0, 0, 0)
+    gradient.addColorStop(0, "#D67F74")
+    gradient.addColorStop(1, "#D63936")
+    color = gradient;
+})
+
+green.addEventListener('click', function() {
+    let gradient = ctx.createLinearGradient(170, 0, 0, 0)
+    gradient.addColorStop(0, "#91D6C3")
+    gradient.addColorStop(1, "#32D6AC")
+    color = gradient;
+})
 
 blue.addEventListener('click', function () {
-    color = "#7DC6E0";
+    let gradient = ctx.createLinearGradient(0, 0, 170, 0)
+    gradient.addColorStop(0, "#0087F5")
+    gradient.addColorStop(1, "#7DC6E0")
+    color = gradient;
+})
+
+purple.addEventListener('click', function() {
+    let gradient = ctx.createLinearGradient(170, 0, 0, 0)
+    gradient.addColorStop(0, "#B89FD6")
+    gradient.addColorStop(1, "#9563D6")
+    color = gradient;
 })
