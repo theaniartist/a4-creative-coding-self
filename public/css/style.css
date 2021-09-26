@@ -62,27 +62,63 @@ p {
 }
 
 #content {
-    background-color: teal;
-}
-
-#player {
-    background-color: violet;
+    display: none;
 }
 
 #canvas {
     background-color: black;
-    margin-left: 100px;
+    margin-left: 150px;
 }
 
 #songs {
+    background-color: #FFB7AE;
     display: block;
-    background-color: thistle;
+    flex-direction: column;
+    float: left;
+    clear: none;
+}
+
+#songList {
+    font-family: 'Rubik', sans-serif;
+    font-size: 35px;
+    padding-left: 100px;
+}
+
+.song {
+    font-family: 'Besley', sans-serif;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+}
+
+.song:hover {
+    background-color:#63B1FF;
+}
+
+#colors {
+    font-family: 'Rubik', sans-serif;
+    font-size: 35px;
+    padding-left: 130px;
 }
 
 #changeColors {
-    background-color: turquoise;
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
+    background-color: #FFB7AE;
+    width: 360px;
+    margin-top: 350px;
+    display: block;
     flex-direction: column;
+}
+
+.colorBtn {
+    font-family: 'Besley', sans-serif;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+}
+
+#options {
+    display: block;
+    flex-direction: column;
+    float: left;
+    clear: none;
 }

@@ -15,7 +15,7 @@
 
 <body>
     <link href="css/style.css" rel="stylesheet">
-    <h1>Welcome!</h1>
+    <h1 id= 'title'>Welcome!</h1>
     <div id='overlay'>
         <div id='instructionsForm'>
             <h2>Instructions</h2>
@@ -42,36 +42,39 @@
     <div id='content'>
         <h1>Let's Vibe</h1>
         <div id="player">
-            <div id='songs'>
-                Song List
-                <div></div>
-                <input type="button" id="sajou" name="song" value="Gray by sajou no hana">
-                <div></div>
-                <input type="button" id="sawano" name="song" value="Hands Up to the Sky by SawanoHiroyuki[nZk]">
-                <div></div>
-                <input type="button" id="reona" name="song" value="Untitled World by ReoNa">
-                <div></div>
-                <input type="button" id="lisa" name="song" value="Gurenge by LiSA">
-                <div></div>
-                <input type="button" id="utada" name="song" value="PINK BLOOD by Utada Hikaru">
-                <div></div>
-                <input type="button" id="sasanomaly" name="song" value="Sora to Utsuro by sasanomaly">
-                <div></div>
-                <input type="button" id="aimer" name="song" value="3min by Aimer">
-                <div></div>
+            <div id= 'options'>
+                <div id='songs'>
+                    <label id='songList'>Song List</label>
+                    <div></div>
+                    <input type="button" id="sajou" class="song" value="Gray by sajou no hana">
+                    <div></div>
+                    <input type="button" id="sawano" class="song" value="Hands Up to the Sky by SawanoHiroyuki[nZk]">
+                    <div></div>
+                    <input type="button" id="reona" class="song" value="Untitled World by ReoNa">
+                    <div></div>
+                    <input type="button" id="lisa" class="song" value="Gurenge by LiSA">
+                    <div></div>
+                    <input type="button" id="utada" class="song" value="PINK BLOOD by Utada Hikaru">
+                    <div></div>
+                    <input type="button" id="sasanomaly" class="song" value="Sora to Utsuro by sasanomaly">
+                    <div></div>
+                    <input type="button" id="aimer" class="song" value="3min by Aimer">
+                    <div></div>
+                </div>
+                <div id="changeColors">
+                    <label id='colors'>Colors</label>
+                    <button id="default" class='colorBtn'>Default</button>
+                    <button id="blueGradient" class='colorBtn'>Blue Gradient</button>
+                    <button id="redGradient" class='colorBtn'>Red Gradient</button>
+                    <button id="purpleGradient" class='colorBtn'>Purple Gradient</button>
+                    <button id="greenGradient" class='colorBtn'>Green Gradient</button>
+                </div>
             </div>
-            <div id= "canvasDiv">
-                <canvas id= "canvas" width= "512" height= "512"></canvas>
+            <div id="canvasDiv">
+                <canvas id="canvas" width="500" height="528"></canvas>
             </div>
-        </div>
-        <div id="changeColors">
-            Change Colors
-            <button id="default">Default</button>
-            <button id="blueGradient">Blue Gradient</button>
-            <button id="redGradient">Red Gradient</button>
-            <button id="purpleGradient">Purple Gradient</button>
-            <button id="greenGradient">Green Gradient</button>
         </div>
     </div>
 </body>
+
 </html>

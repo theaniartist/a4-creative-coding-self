@@ -1,6 +1,8 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 const overlay = document.getElementById('overlay')
+const content = document.getElementById('content')
+const title = document.getElementById('title')
 const playBtn = document.getElementById('play')
 
 const sajouBtn = document.getElementById('sajou'),
@@ -35,18 +37,15 @@ const start = function () {
     player.connect(audioCtx.destination)
     player.connect(analyser)
 
-    audioElement.src = reona
+    audioElement.src = sajou
     audioElement.play()
     audioElement.crossOrigin = "anonymous";
 
     const results = new Uint8Array(analyser.frequencyBinCount)
 
     draw = function () {
-        // temporal recursion, call tthe function in the future
         window.requestAnimationFrame(draw)
 
-        // fill our canvas with a black box
-        // by doing this every frame we 'clear' the canvas
         ctx.fillStyle = 'black'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -62,6 +61,9 @@ const start = function () {
 }
 
 playBtn.addEventListener('click', function() {
+    document.body.removeChild(overlay)
+    document.body.removeChild(title)
+    content.style.display = 'block'
     audioCtx.resume()
     start()
 })
@@ -101,6 +103,7 @@ aimerBtn.addEventListener('click', function() {
     audioElement.play()
 })
 
+const defaultColor = document.getElementById('default')
 const blue = document.getElementById('blueGradient')
 
 blue.addEventListener('click', function () {
