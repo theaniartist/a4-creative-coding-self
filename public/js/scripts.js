@@ -5,16 +5,20 @@ const content = document.getElementById('content')
 const title = document.getElementById('title')
 const playBtn = document.getElementById('play')
 
-const hatenaBtn = document.getElementById('hatena'),
-      sawanoBtn = document.getElementById('sawano'),
-      reonaBtn = document.getElementById('reona'),
-      lisaBtn = document.getElementById('lisa'),
-      utadaBtn = document.getElementById('utada'),
-      sasanomalyBtn = document.getElementById('sasanomaly'),
-      aimerBtn = document.getElementById('aimer'),
-      lynBtn = document.getElementById('lyn')
+const volume = document.getElementById('volume'),
+      pauseBtn = document.getElementById('pause'),
+      playSet = document.getElementById('playSet'),
+      mute = document.getElementById('mute'),
+      loopBox = document.getElementById('loop')
 
-let color = 'white';
+const hatenaBtn = document.getElementById('hatena'),
+    sawanoBtn = document.getElementById('sawano'),
+    reonaBtn = document.getElementById('reona'),
+    lisaBtn = document.getElementById('lisa'),
+    utadaBtn = document.getElementById('utada'),
+    sasanomalyBtn = document.getElementById('sasanomaly'),
+    aimerBtn = document.getElementById('aimer'),
+    lynBtn = document.getElementById('lyn')
 
 const hatena = "https://cdn.glitch.com/1be4c9fb-3024-481f-be52-d8a904df0358%2F01.%E5%A4%A2.mp3?v=1632698467767"
 const sawano = "https://cdn.glitch.com/1be4c9fb-3024-481f-be52-d8a904df0358%2F02.Hands%20Up%20to%20the%20Sky.mp3?v=1632612774842"
@@ -25,11 +29,20 @@ const sasanomaly = "https://cdn.glitch.com/1be4c9fb-3024-481f-be52-d8a904df0358%
 const aimer = "https://cdn.glitch.com/1be4c9fb-3024-481f-be52-d8a904df0358%2F04%203min.mp3?v=1632680298458"
 const lyn = "https://cdn.glitch.com/1be4c9fb-3024-481f-be52-d8a904df0358%2Fdisc1_03.mp3?v=1632698430615"
 
+const defaultColor = document.getElementById('default'),
+    red = document.getElementById('redGradient'),
+    green = document.getElementById('greenGradient'),
+    blue = document.getElementById('blueGradient'),
+    purple = document.getElementById('purpleGradient')
+
+let color = 'white';
+
 //audio init
 const audioCtx = new AudioContext()
 const audioElement = document.createElement('audio')
 document.body.appendChild(audioElement)
 
+//Starts audio setup and visualization
 const start = function () {
 
     //audio graph setup
@@ -62,7 +75,8 @@ const start = function () {
     draw()
 }
 
-playBtn.addEventListener('click', function() {
+//Play button on the instructions screen
+playBtn.addEventListener('click', function () {
     document.body.removeChild(overlay)
     document.body.removeChild(title)
     content.style.display = 'block'
@@ -70,64 +84,79 @@ playBtn.addEventListener('click', function() {
     start()
 })
 
-hatenaBtn.addEventListener('click', function() {
+//Settings menu
+playSet.addEventListener('click', ()=> audioElement.play())
+pauseBtn.addEventListener('click', ()=> audioElement.pause())
+volume.addEventListener("change", (e)=> audioElement.volume = e.currentTarget.value / 100)
+
+mute.addEventListener('click', function() {
+    if (mute.checked) {
+        audioElement.muted = true
+    } else {
+        audioElement.muted = false
+    }
+})
+
+loopBox.addEventListener('click', function() {
+    if (loopBox.checked) {
+        audioElement.loop = true
+    } else {
+        audioElement.loop = false
+    }
+})
+
+//Plays selected song when clicked
+hatenaBtn.addEventListener('click', function () {
     audioElement.src = hatena
     audioElement.play()
 })
 
-sawanoBtn.addEventListener('click', function() {
+sawanoBtn.addEventListener('click', function () {
     audioElement.src = sawano
     audioElement.play()
 })
 
-reonaBtn.addEventListener('click', function() {
+reonaBtn.addEventListener('click', function () {
     audioElement.src = reona
     audioElement.play()
 })
 
-lisaBtn.addEventListener('click', function() {
+lisaBtn.addEventListener('click', function () {
     audioElement.src = lisa
     audioElement.play()
 })
 
-utadaBtn.addEventListener('click', function() {
+utadaBtn.addEventListener('click', function () {
     audioElement.src = utada
     audioElement.play()
 })
 
-sasanomalyBtn.addEventListener('click', function() {
+sasanomalyBtn.addEventListener('click', function () {
     audioElement.src = sasanomaly
     audioElement.play()
 })
 
-aimerBtn.addEventListener('click', function() {
+aimerBtn.addEventListener('click', function () {
     audioElement.src = aimer
     audioElement.play()
 })
 
-lynBtn.addEventListener('click', function() {
+lynBtn.addEventListener('click', function () {
     audioElement.src = lyn
     audioElement.play()
 })
 
-const defaultColor = document.getElementById('default'),
-      red = document.getElementById('redGradient'),
-      green = document.getElementById('greenGradient'),
-      blue = document.getElementById('blueGradient'),
-      purple = document.getElementById('purpleGradient')
+//Changes color of audio wave when clicked
+defaultColor.addEventListener('click', ()=> color = 'white')
 
-defaultColor.addEventListener('click', function() {
-    color = 'white';
-})
-
-red.addEventListener('click', function() {
+red.addEventListener('click', function () {
     let gradient = ctx.createLinearGradient(170, 0, 0, 0)
     gradient.addColorStop(0, "#D67F74")
     gradient.addColorStop(1, "#D63936")
     color = gradient;
 })
 
-green.addEventListener('click', function() {
+green.addEventListener('click', function () {
     let gradient = ctx.createLinearGradient(170, 0, 0, 0)
     gradient.addColorStop(0, "#91D6C3")
     gradient.addColorStop(1, "#32D6AC")
@@ -141,7 +170,7 @@ blue.addEventListener('click', function () {
     color = gradient;
 })
 
-purple.addEventListener('click', function() {
+purple.addEventListener('click', function () {
     let gradient = ctx.createLinearGradient(170, 0, 0, 0)
     gradient.addColorStop(0, "#B89FD6")
     gradient.addColorStop(1, "#9563D6")

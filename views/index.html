@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Besley&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Main Page.">
-    <script src="js/scripts.js" defer></script>
+    <meta name="description" content="Webpage showcasing various types of music artists">
 </head>
 
 <body>
+    <script src="js/scripts.js" defer></script>
     <link href="css/style.css" rel="stylesheet">
-    <h1 id= 'title'>Welcome!</h1>
+    <h1 id='title'>Welcome!</h1>
     <div id='overlay'>
         <div id='instructionsForm'>
             <h2>Instructions</h2>
@@ -42,7 +42,7 @@
     <div id='content'>
         <h1>Let's Vibe</h1>
         <div id="player">
-            <div id= 'options'>
+            <div id='options'>
                 <div id='songs'>
                     <label id='songList'>Song List</label>
                     <div></div>
@@ -57,7 +57,6 @@
                     <input type="button" id="utada" class="song" value="PINK BLOOD by Utada Hikaru">
                     <div></div>
                     <input type="button" id="sasanomaly" class="song" value="Sora to Utsuro by sasanomaly">
-                    <div></div>
                     <input type="button" id="aimer" class="song" value="3min by Aimer">
                     <div></div>
                     <input type="button" id="lyn" class="song" value="Take Over by Lyn">
@@ -70,6 +69,24 @@
                     <button id="greenGradient" class='colorBtn'>Green Gradient</button>
                     <button id="blueGradient" class='colorBtn'>Blue Gradient</button>
                     <button id="purpleGradient" class='colorBtn'>Purple Gradient</button>
+                </div>
+            </div>
+            <div id='settingsDiv'>
+                <div id='settings'>
+                    <label id='settingsLabel'>Settings</label>
+                    <div></div>
+                    <button id='playSet'>Play</button>
+                    <div></div>
+                    <button id='pause'>Pause</button>
+                    <div></div>
+                    <label>Volume</label>
+                    <input type="range" min= '0' max= '100' value= '50' step= '1' id="volume">
+                    <div></div>
+                    <label>Mute</label>
+                    <input type='checkbox' id= 'mute'>
+                    <div></div>
+                    <label>Loop</label>
+                    <input type="checkbox" id= 'loop'>
                 </div>
             </div>
             <div id="canvasDiv">
