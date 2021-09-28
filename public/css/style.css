@@ -135,7 +135,6 @@ p {
     flex-direction: column;
     float: right;
     clear: none;
-    height: 500px;
 }
 
 #settingsLabel {
@@ -175,12 +174,6 @@ p {
 
 .setBtn:hover {
     background-color: #E09D99;
-}
-
-#secCanvas {
-    background-color: black;
-    height: 320px;
-    width: 360px;
 }
 
 #volume {
