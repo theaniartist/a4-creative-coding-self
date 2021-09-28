@@ -62,7 +62,7 @@ p {
 }
 
 #content {
-    /*display: none;*/
+    display: none;
 }
 
 #canvas {
@@ -87,6 +87,7 @@ p {
 .song {
     font-family: 'Besley', sans-serif;
     font-size: 15px;
+    background-color: #FDF3F5;
     border: none;
     width: 100%;
 }
@@ -112,6 +113,7 @@ p {
 .colorBtn {
     font-family: 'Besley', sans-serif;
     font-size: 15px;
+    background-color: #FDF3F5;
     border: none;
     width: 100%;
 }
@@ -128,27 +130,68 @@ p {
 }
 
 #settingsDiv {
+    background-color: #FFB7AE;
     display: block;
     flex-direction: column;
     float: right;
     clear: none;
+    height: 500px;
+}
+
+#settingsLabel {
+    font-family: 'Rubik', sans-serif;
+    font-size: 35px;
+    padding-left: 120px;
 }
 
 #settings {
-    background-color: #FFB7AE;
+    background-color: #FDF3F5;
     width: 360px;
     display: block;
     flex-direction: column;
 }
 
+.setLabels {
+    font-family: 'Besley', sans-serif;
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+.checkBox {
+    margin-left: 150px;
+    height: 20px;
+    width: 20px;
+}
+
+.setBtn {
+    font-family: 'Besley', sans-serif;
+    font-size: 15px;
+    background-color: #FDF3F5;
+    border: none;
+    width: 100%;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.setBtn:hover {
+    background-color: #E09D99;
+}
+
+#secCanvas {
+    background-color: black;
+    height: 320px;
+    width: 360px;
+}
+
 #volume {
     -webkit-appearance: none;
-    width: 355px;
+    width: 200px;
     height: 20px;
-    background: #961515;
+    background: #FFB7AE;
     outline: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    margin-left: 38px;
   }
   
   #volume:hover {
@@ -160,13 +203,21 @@ p {
     appearance: none;
     width: 20px;
     height: 20px;
-    background: #04AA6D;
+    background: #EB9694;
     cursor: pointer;
   }
   
   #volume::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    background: #04AA6D;
+    background: #EB9694;
     cursor: pointer;
+  }
+
+  #currentSong {
+      background-color: #FDF3F5;
+      font-family: 'Besley', sans-serif;
+      font-size: 15px;
+      border: none;
+      width: 270px;
   }

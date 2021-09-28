@@ -14,6 +14,7 @@
 
 <body>
     <script src="js/scripts.js" defer></script>
+    <script src="js/sketch.js" defer></script>
     <link href="css/style.css" rel="stylesheet">
     <h1 id='title'>Welcome!</h1>
     <div id='overlay'>
@@ -34,7 +35,7 @@
             </p>
             <h3>Settings</h3>
             <p>
-                Allows you to play, pause, loop, mute, and change the volume of the song.
+                Allows you to play, pause, loop, mute, change the volume of the song and shows current song playing.
             </p>
             <button id="play">Play</button>
         </div>
@@ -65,29 +66,33 @@
                 <div id="changeColors">
                     <label id='colors'>Colors</label>
                     <button id="default" class='colorBtn'>Default</button>
-                    <button id="redGradient" class='colorBtn'>Red Gradient</button>
-                    <button id="greenGradient" class='colorBtn'>Green Gradient</button>
-                    <button id="blueGradient" class='colorBtn'>Blue Gradient</button>
-                    <button id="purpleGradient" class='colorBtn'>Purple Gradient</button>
+                    <button id="redGradient" class='colorBtn'>Red</button>
+                    <button id="greenGradient" class='colorBtn'>Green</button>
+                    <button id="blueGradient" class='colorBtn'>Blue</button>
+                    <button id="purpleGradient" class='colorBtn'>Purple</button>
                 </div>
             </div>
             <div id='settingsDiv'>
+                <label id='settingsLabel'>Settings</label>
                 <div id='settings'>
-                    <label id='settingsLabel'>Settings</label>
                     <div></div>
-                    <button id='playSet'>Play</button>
+                    <button id='playSet'class= 'setBtn'>Play</button>
                     <div></div>
-                    <button id='pause'>Pause</button>
+                    <button id='pause' class= 'setBtn'>Pause</button>
                     <div></div>
-                    <label>Volume</label>
-                    <input type="range" min= '0' max= '100' value= '50' step= '1' id="volume">
+                    <label class= 'setLabels'>Volume</label>
+                    <input type="range" min= '0' max= '100' value= '100' step= '1' id="volume">
                     <div></div>
-                    <label>Mute</label>
-                    <input type='checkbox' id= 'mute'>
+                    <label class= 'setLabels'>Mute</label>
+                    <input type='checkbox' class= 'checkBox' id= 'mute'>
                     <div></div>
-                    <label>Loop</label>
-                    <input type="checkbox" id= 'loop'>
+                    <label class= 'setLabels'>Loop</label>
+                    <input type="checkbox" class= 'checkBox' id= 'loop'>
+                    <div></div>
+                    <label class= 'setLabels'>Playing: </label>
+                    <input type="text" id= 'currentSong'>
                 </div>
+                <canvas id= 'secCanvas'></canvas>
             </div>
             <div id="canvasDiv">
                 <canvas id="canvas" width="500" height="528"></canvas>

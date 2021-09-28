@@ -9,7 +9,8 @@ const volume = document.getElementById('volume'),
       pauseBtn = document.getElementById('pause'),
       playSet = document.getElementById('playSet'),
       mute = document.getElementById('mute'),
-      loopBox = document.getElementById('loop')
+      loopBox = document.getElementById('loop'),
+      currentSong = document.getElementById('currentSong')
 
 const hatenaBtn = document.getElementById('hatena'),
     sawanoBtn = document.getElementById('sawano'),
@@ -55,6 +56,8 @@ const start = function () {
     audioElement.src = hatena
     audioElement.play()
     audioElement.crossOrigin = "anonymous";
+
+    currentSong.value = hatenaBtn.value
 
     const results = new Uint8Array(analyser.frequencyBinCount)
 
@@ -109,41 +112,52 @@ loopBox.addEventListener('click', function() {
 hatenaBtn.addEventListener('click', function () {
     audioElement.src = hatena
     audioElement.play()
+    currentSong.value = hatenaBtn.value
 })
 
 sawanoBtn.addEventListener('click', function () {
     audioElement.src = sawano
     audioElement.play()
+    currentSong.value = sawanoBtn.value
+
 })
 
 reonaBtn.addEventListener('click', function () {
     audioElement.src = reona
     audioElement.play()
+    currentSong.value = reonaBtn.value
+
 })
 
 lisaBtn.addEventListener('click', function () {
     audioElement.src = lisa
     audioElement.play()
+    currentSong.value = lisaBtn.value
+
 })
 
 utadaBtn.addEventListener('click', function () {
     audioElement.src = utada
     audioElement.play()
+    currentSong.value = utadaBtn.value
 })
 
 sasanomalyBtn.addEventListener('click', function () {
     audioElement.src = sasanomaly
     audioElement.play()
+    currentSong.value = sasanomalyBtn.value
 })
 
 aimerBtn.addEventListener('click', function () {
     audioElement.src = aimer
     audioElement.play()
+    currentSong.value = aimerBtn.value
 })
 
 lynBtn.addEventListener('click', function () {
     audioElement.src = lyn
     audioElement.play()
+    currentSong.value = lynBtn.value
 })
 
 //Changes color of audio wave when clicked
